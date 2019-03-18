@@ -1,0 +1,53 @@
+@import '../finances-explorer-project-theme.scss';
+
+.app-menu-button {
+  padding: 0;
+  color: mat-color($accent, 500);
+} 
+
+.mat-sidenav {
+  background-color: mat-color($primary, 900);  
+  width: 360px;
+}
+
+.mat-sidenav-container {
+  height: 90vh;
+}
+
+.mat-toolbar{
+  background-color: mat-color($primary, 900);
+  .mat-button{
+    min-width: 0;
+    :hover{
+      background-color: transparent;
+    }
+  }
+
+  span{
+    color: mat-color($accent, 500);
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+.sidenav-toolbar {
+  height: 64px;
+  color:mat-color($accent, 500);
+  display: flex;
+  flex-direction: row;
+ 
+  @media (max-width: 600px) {
+    height: 56px;
+  }
+}
+
+.mat-nav-list {
+  padding-top: 0;
+  padding-left: 16px;
+}
+
+.maintitle {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
