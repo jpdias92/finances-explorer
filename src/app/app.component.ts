@@ -1,8 +1,8 @@
 import {
-  Component, 
-  ViewChild, 
-  ElementRef, 
-  ViewEncapsulation, 
+  Component,
+  ViewChild,
+  ElementRef,
+  ViewEncapsulation,
   AfterViewInit
 } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
@@ -27,14 +27,14 @@ export class AppComponent implements AfterViewInit {
       route: ''
     },
     {
-      displayName: 'Introdução de Dados',
+      displayName: 'Movimentos',
       iconName: 'library_add',
-      route: 'data'
+      route: 'movements'
     },
     {
       displayName: 'Contribuintes',
       iconName: 'insert_drive_file',
-      route: 'donors'      
+      route: 'donors'
     },
     {
       displayName: 'Gastos',

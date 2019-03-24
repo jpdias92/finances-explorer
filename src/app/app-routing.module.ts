@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DataComponent } from './data/data.component';
+import { MovementsComponent } from './movements/movements.component';
 import { DonorsComponent } from './donors/donors.component';
 
 const routes: Routes = [
   {
-    path: 'data',
-    component: DataComponent
+    path: 'movements',
+    component: MovementsComponent
   },
   {
     path: 'donors',

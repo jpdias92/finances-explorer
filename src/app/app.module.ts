@@ -8,13 +8,13 @@ import { MaterialModule } from './infrastructure/material/material.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
-import { DataComponent } from './data/data.component';
+import { MovementsComponent } from './movements/movements.component';
 import { DonorsComponent } from './donors/donors.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DataComponent,
+    MovementsComponent,
     DonorsComponent
   ],
   imports: [
