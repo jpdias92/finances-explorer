@@ -21,8 +21,9 @@ docker-compose up -d --build
 * MySQL 5.7
 * phpMyAdmin
 
-### Server
+### [Server](./server/README.md)
 
+* Python 3.7.2
 
 ### [App](./app/README.md)
 
