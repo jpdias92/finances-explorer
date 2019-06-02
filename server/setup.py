@@ -8,6 +8,6 @@ setup(
 
     packages=find_packages(),
 
-    install_requires=['flask', 'flask-restplus', 'werkzeug', 'flask_script', 'flask_cors'],
+    install_requires=['flask', 'flask-restplus', 'werkzeug', 'flask_script', 'flask_cors', 'mysql-connector'],
 
 )

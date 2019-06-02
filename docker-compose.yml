@@ -29,5 +29,9 @@ services:
     build: ./server/
     container_name: 'finances-explorer-api'
     restart: 'always'
+    links:
+      - mysql
     ports:
       - "8888:8888"
+    environment:
+      MYSQL_HOST_NAME: mysql

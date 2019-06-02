@@ -14,6 +14,9 @@ docker-compose up -d --build
     * username: root
     * password: tiger
 
+* API documentation will be available on http://0.0.0.0:8888/api/
+
+
 ## Components
 
 ### [Database](./database/README.md)
