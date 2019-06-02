@@ -24,3 +24,10 @@ services:
       - '8080:80'
     volumes:
       - /sessions
+
+  api:
+    build: ./server/
+    container_name: 'finances-explorer-api'
+    restart: 'always'
+    ports:
+      - "8888:8888"
