@@ -13,8 +13,10 @@ class MovementDaoMysql:
 
     def get_all(self) -> List[Movement]:
         cursor = self.mysql.cursor()
-        cursor.execute("SELECT id, movement_category_id, amount, movement_date, "
-                       "description, comment FROM finances_explorer.movements;")
+        cursor.execute("SELECT movements.id, categories.name, amount, movement_date, description, comment "
+                       "FROM finances_explorer.movements "
+                       "INNER JOIN finances_explorer.movement_categories as categories "
+                       "ON movement_category_id = categories.id;")
         results = cursor.fetchall()
 
         movements = []

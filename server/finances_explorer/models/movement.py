@@ -8,7 +8,7 @@ from finances_explorer.restplus import api
 class Movement:
     get_movement_response_model = api.model('Movement', {
         'movement_id': fields.Integer(example="1", description="The ID of the movement in the database"),
-        'category': fields.Integer(description="The category of the movement"),
+        'category': fields.String(description="The category of the movement"),
         'amount': fields.Float(example="10.55", description="The movement's amount"),
         'movement_date': fields.String(example="01-01-2019", description="Date of the movement"),
         'description': fields.String(description="The movement's description"),
