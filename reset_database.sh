@@ -2,9 +2,9 @@
 
 docker-compose down
 
-mv data/mysql/.gitkeep .
-rm -rf data/mysql/
-mkdir data/mysql
-mv .gitkeep data/mysql
+mv database/data/mysql/.gitkeep .
+rm -rf database/data/mysql/
+mkdir database/data/mysql
+mv .gitkeep database/data/mysql
 
 docker-compose up -d --build

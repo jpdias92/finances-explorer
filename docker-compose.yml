@@ -2,14 +2,14 @@ version: "3"
 
 services:
   mysql:
-    build: ./bin/mysql
+    build: ./database/bin/mysql
     container_name: '5.7-mysql'
     restart: 'always'
     ports:
       - "3306:3306"
     volumes:
-      - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
-      - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
+      - ${MYSQL_DATA_DIR-./database/data/mysql}:/var/lib/mysql
+      - ${MYSQL_LOG_DIR-./database/logs/mysql}:/var/log/mysql
     environment:
       MYSQL_ROOT_PASSWORD: tiger
   phpmyadmin:
