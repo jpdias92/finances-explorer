@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { MovementsComponent } from './movements/movements.component';
-import { DonorsComponent } from './donors/donors.component';
+import { MovementsListComponent } from './modules/movements/components/movements-list/movements-list.component';
+import { DonorsComponent } from './modules/donors/donors.component';
 
 const routes: Routes = [
   {
     path: 'movements',
-    component: MovementsComponent
+    // component: MovementsListComponent
+    loadChildren: './modules/movements/movements.module#MovementsModule'
   },
   {
     path: 'donors',

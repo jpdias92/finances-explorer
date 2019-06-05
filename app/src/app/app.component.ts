@@ -6,7 +6,6 @@ import {
   AfterViewInit
 } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-
 import { SideNavMenu } from './shared/models/side-nav-menu.interface';
 import { SideNavMenuService } from './shared/services/side-nav-menu.service';
 

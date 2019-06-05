@@ -7,24 +7,28 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SideNavMenuComponent } from './side-nav-menu/side-nav-menu.component';
 import { MaterialModule } from '../infrastructure/material/material.module';
 import { SideNavMenuService } from './services/side-nav-menu.service';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
     HttpClientModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
   ],
   exports: [
     SideNavMenuComponent,
+    NotificationComponent
   ],
   declarations: [
     SideNavMenuComponent,
+    NotificationComponent
   ],
   providers: [
     SideNavMenuService,
+    NotificationComponent
   ]
 })
 export class SharedModule { }
