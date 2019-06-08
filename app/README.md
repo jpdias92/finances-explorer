@@ -37,3 +37,31 @@ Reference: [Debugging Angular CLI Apps inside VSCode with Browser Preview](https
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Building and running the docker image
+
+**Reference:** https://mherman.org/blog/dockerizing-an-angular-app/
+
+1. Build the image with `docker build -t finances-explorer-ui:dev .`. This will yield the `finances-explorer-ui:dev` image.
+
+2. Run it with `docker run -d -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --rm finances-explorer-ui:dev`. The UI will then be running on `http://localhost:4201/`.
+
+   * `-v ${PWD}:/app` mounts the code into the container at “/app”. {PWD} may not work on Windows. See this Stack Overflow question for more info.
+
+   * Since we want to use the container version of the “node_modules” folder, we configured another volume: `-v /app/node_modules`. You should now be able to remove the local “node_modules” flavor.
+
+   * `-p 4201:4200` exposes port 4200 to other Docker containers on the same network (for inter-container communication) and port 4201 to the host.
+
+   * Finally, `--rm` removes the container and volumes after the container exits.
+
+### Running unit tests inside the container
+
+```
+docker exec -it <container_id>  ng test --watch=false
+```
+
+### Running end-to-end tests inside the container
+
+```
+docker exec -it <container_id> ng e2e --port 4202
+```

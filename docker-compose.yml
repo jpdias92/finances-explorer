@@ -35,3 +35,16 @@ services:
       - "8888:8888"
     environment:
       MYSQL_HOST_NAME: mysql
+
+  ui:
+    build: ./app/
+    container_name: finances-explorer-ui
+    restart: 'always'
+    links:
+      - api
+    ports:
+      - '4201:4200'
+    volumes:
+      - './app/:/app'
+      - '/app/node_modules'
+
