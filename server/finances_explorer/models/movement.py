@@ -8,16 +8,24 @@ from finances_explorer.restplus import api
 class Movement:
     get_movement_response_model = api.model('Movement', {
         'movement_id': fields.Integer(example="1", description="The ID of the movement in the database"),
-        'category': fields.String(description="The category of the movement"),
-        'amount': fields.Float(example="10.55", description="The movement's amount"),
-        'movement_date': fields.String(example="01-01-2019", description="Date of the movement"),
+        'category_id': fields.Integer(description="The ID of the movement's category"),
+        'amount': fields.Float(example=10.55, description="The movement's amount"),
+        'movement_date': fields.String(example="2019-01-01", description="Date of the movement"),
         'description': fields.String(description="The movement's description"),
-        'comment': fields.String(description="An optional comment about the movement"),
+        'comment': fields.String(description="An optional comment about the movement")
     })
 
-    def __init__(self, movement_id, category, amount, movement_date, description, comment=""):
+    post_movement_request_model = api.model('Create new Movement', {
+        'category_id': fields.Integer(required=True, description="The ID of the movement's category"),
+        'amount': fields.Float(required=True, example=10.55, description="The movement's amount"),
+        'movement_date': fields.String(required=True, example="2019-01-01", description="Date of the movement"),
+        'description': fields.String(required=True, description="The movement's description"),
+        'comment': fields.String(description="An optional comment about the movement")
+    })
+
+    def __init__(self, movement_id="", category_id="", amount="", movement_date="", description="", comment=""):
         self.movement_id = movement_id
-        self.category = category
+        self.category_id = category_id
         self.amount = amount
         self.movement_date = movement_date
         self.description = description
