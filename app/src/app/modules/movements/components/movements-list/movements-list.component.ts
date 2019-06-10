@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 
-import { MovementsListDataSource } from './movements-list-datasource';
 import { MovementsService } from '../../services/movements.service';
+import { Movement } from '../../models/movement';
 import { NotificationComponent } from '../../../../shared/notification/notification.component';
 
 /**
@@ -14,10 +14,11 @@ import { NotificationComponent } from '../../../../shared/notification/notificat
   templateUrl: 'movements-list.component.html',
 })
 export class MovementsListComponent implements OnInit {
-
-  dataSource: MovementsListDataSource;
-
   displayedColumns: string[] = ['id', 'date', 'description', 'amount', 'category', 'observations'];
+  dataSource: MatTableDataSource<Movement>;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(
     private movementsService: MovementsService,
@@ -25,17 +26,31 @@ export class MovementsListComponent implements OnInit {
     ) {
 
     this.getMovementsData();
+  }
 
-  };
+  ngOnInit() {
+  }
 
-  ngOnInit() { }
+  ngAfterViewInit() {
+  }
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
 
   getMovementsData() {
     this.movementsService.getMovements().subscribe(
       (results: any) => {
         // on success
         console.log(results);
-        this.dataSource = new MovementsListDataSource(results);
+        this.dataSource = new MatTableDataSource(Movement.map(results));
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
         console.log(this.dataSource);
       },
       (err: any) => {
