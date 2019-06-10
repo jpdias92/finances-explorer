@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MovementsRoutingModule } from './movements-routing.module';
 import { MaterialModule } from '../../infrastructure/material/material.module';
-import {MatDialogModule} from "@angular/material";
 import { SharedModule } from '../../shared/shared.module';
 import { DatePipe } from '@angular/common'
 
@@ -23,7 +22,6 @@ import { MovementsService } from './services/movements.service';
     ReactiveFormsModule,
     MovementsRoutingModule,
     MaterialModule,
-    MatDialogModule,
     SharedModule
   ],
   declarations: [

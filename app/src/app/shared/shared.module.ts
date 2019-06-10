@@ -6,13 +6,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { SideNavMenuComponent } from './side-nav-menu/side-nav-menu.component';
 import { MaterialModule } from '../infrastructure/material/material.module';
+import { MatDialogModule } from "@angular/material";
 import { SideNavMenuService } from './services/side-nav-menu.service';
 import { NotificationComponent } from './notification/notification.component';
+import { ConfirmComponent } from './confirm/confirm.component';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
+    MatDialogModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
@@ -20,15 +23,20 @@ import { NotificationComponent } from './notification/notification.component';
   ],
   exports: [
     SideNavMenuComponent,
-    NotificationComponent
+    NotificationComponent,
+    ConfirmComponent
   ],
   declarations: [
     SideNavMenuComponent,
-    NotificationComponent
+    NotificationComponent,
+    ConfirmComponent
   ],
   providers: [
     SideNavMenuService,
     NotificationComponent
+  ],
+  entryComponents: [
+    ConfirmComponent
   ]
 })
 export class SharedModule { }

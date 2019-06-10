@@ -28,4 +28,8 @@ export class MovementsService {
       });
   }
 
+  public deleteMovement(formData: any) {
+    return this.httpClient.delete(`${environment.host}/finances_explorer/movements/${formData.id}`);
+  }
+
 }

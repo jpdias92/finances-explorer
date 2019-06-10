@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Por favor confirme</h1>
+<div mat-dialog-content>
+  <p>Tem a certeza que pretende {{action}} {{itemName}}?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="accent" mat-dialog-close>CANCEL</button>
+  <button mat-button color="accent" (click)="onOkClick()">OK</button>
+</div>
