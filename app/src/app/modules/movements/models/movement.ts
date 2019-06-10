@@ -18,26 +18,4 @@ export class Movement {
             };
         });
     }
-
-    public static mapAction(action: string) : string {
-        let mappedAction: string;
-        switch(action) {
-            case "New Movement": {
-                mappedAction = "New";
-                break;
-            }
-
-            case "Update Movement": {
-                mappedAction = "Update";
-                break;
-            }
-
-            default: {
-                mappedAction = "None";
-                break;
-            }
-        }
-
-        return mappedAction;
-    }
 }

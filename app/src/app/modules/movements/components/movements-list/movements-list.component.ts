@@ -1,9 +1,12 @@
 import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import {MatDialog, MatDialogConfig} from "@angular/material";
+
 
 import { MovementsService } from '../../services/movements.service';
 import { Movement } from '../../models/movement';
 import { NotificationComponent } from '../../../../shared/notification/notification.component';
+import { MovementsInsertComponent } from '../movements-insert/movements-insert.component'
 
 /**
  * @title Data table with sorting, pagination, and filtering.
@@ -22,7 +25,8 @@ export class MovementsListComponent implements OnInit {
 
   constructor(
     private movementsService: MovementsService,
-    private notificationComponent: NotificationComponent
+    private notificationComponent: NotificationComponent,
+    private dialog: MatDialog,
     ) {
 
     this.getMovementsData();
@@ -41,7 +45,6 @@ export class MovementsListComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
 
   getMovementsData() {
     this.movementsService.getMovements().subscribe(
@@ -64,6 +67,29 @@ export class MovementsListComponent implements OnInit {
 
   movementsToggle(movementId: string){
     this.movementToggled.emit(movementId);
+  }
+
+  openInsertDialog() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    const dialogRef = this.dialog.open(MovementsInsertComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(
+        data => this.submitInsert(data)
+    );
+  }
+
+  submitInsert(data: any) {
+    this.movementsService.postMovement(data).subscribe(
+      (results: any) => {
+        this.getMovementsData();
+      },
+      (err: any) => {
+        // on error
+        console.log(err);
+        this.notificationComponent.showNotification(`Erro ao inserir movimento: ${err.error}`, 4000);
+      });
+
   }
 
 }

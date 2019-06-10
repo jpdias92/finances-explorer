@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>Inserir Movimento</h2>
+
+<mat-dialog-content [formGroup]="insertMovementForm">
+
+  <mat-form-field>
+    <input matInput placeholder="Descritivo" formControlName="description">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Selecionar Categoria" formControlName="category">
+      <mat-option value=1 type="number">Doação</mat-option>
+      <mat-option value=2 type="number">Gasto</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Montante" type="number" class="example-right-align" formControlName="amount">
+    <span matPrefix>€&nbsp;</span>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Data do Movimento" formControlName="movement_date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Comentário" formControlName="comment"></textarea>
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<div mat-dialog-actions>
+  <button mat-button color="accent" (click)="close()">CANCELAR</button>
+  <button mat-button color="accent" (click)="save()">INSERIR</button>
+</div>
