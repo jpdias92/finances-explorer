@@ -43,7 +43,7 @@ class MovementCollection(Resource):
 
 @ns.route('/<int:movement_id>')
 @api.response(404, 'Movement not found.')
-class FundItem(Resource):
+class MovementItem(Resource):
     @api.response(204, 'Movement successfully deleted.')
     @api.response(403, 'Movement cannot be deleted')
     @inject_dao

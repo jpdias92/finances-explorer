@@ -35,11 +35,6 @@ class Movement:
         attrs = vars(self)
         return ', '.join("%s: %s" % item for item in attrs.items())
 
-    @classmethod
-    def from_dict(cls, data):
-        movement = Movement(**data)
-        return movement
-
     def to_json_string(self):
         return json.dumps(self.__dict__)
 
