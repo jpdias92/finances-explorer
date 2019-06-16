@@ -12,6 +12,7 @@ import { MovementsListComponent } from './components/movements-list/movements-li
 import { MovementsInsertComponent} from './components/movements-insert/movements-insert.component';
 
 import { MovementsService } from './services/movements.service';
+import { CategoriesService } from './services/categories.service';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { MovementsService } from './services/movements.service';
   ],
   providers: [
     MovementsService,
+    CategoriesService,
     DatePipe
   ],
   entryComponents: [

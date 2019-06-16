@@ -1,9 +1,12 @@
 import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { MatDialog, MatDialogConfig} from "@angular/material";
+import { zip } from "rxjs";
 
 import { MovementsService } from '../../services/movements.service';
+import { CategoriesService } from '../../services/categories.service';
 import { Movement } from '../../models/movement';
+import { Category } from '../../models/category';
 import { NotificationComponent } from '../../../../shared/notification/notification.component';
 import { MovementsInsertComponent } from '../movements-insert/movements-insert.component'
 import { ConfirmComponent } from '../../../../shared/confirm/confirm.component';
@@ -25,6 +28,7 @@ export class MovementsListComponent implements OnInit {
 
   constructor(
     private movementsService: MovementsService,
+    private categoriesService: CategoriesService,
     private notificationComponent: NotificationComponent,
     private dialog: MatDialog,
     ) {
@@ -47,11 +51,12 @@ export class MovementsListComponent implements OnInit {
   }
 
   getMovementsData() {
-    this.movementsService.getMovements().subscribe(
-      (results: any) => {
+    zip(this.movementsService.getMovements(), this.categoriesService.getCategories()).subscribe(
+      ([movements, categories]) => {
         // on success
-        console.log(results);
-        this.dataSource = new MatTableDataSource(Movement.map(results));
+        console.log(movements);
+        console.log(categories);
+        this.dataSource = new MatTableDataSource(Movement.map(movements, Category.map(categories)));
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
         console.log(this.dataSource);
