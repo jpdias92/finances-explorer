@@ -13,6 +13,7 @@ import { MovementsInsertComponent} from './components/movements-insert/movements
 
 import { MovementsService } from './services/movements.service';
 import { CategoriesService } from './services/categories.service';
+import { MAT_DATE_LOCALE } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { CategoriesService } from './services/categories.service';
     MovementsInsertComponent
   ],
   providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},
     MovementsService,
     CategoriesService,
     DatePipe

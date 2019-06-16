@@ -81,6 +81,7 @@ export class MovementsListComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.data = {
+      title: "Inserir Movimento",
       categories: this.categories
     };
 
@@ -111,11 +112,12 @@ export class MovementsListComponent implements OnInit {
     dialogConfig.autoFocus = true;
 
     dialogConfig.data = {
+      title: "Editar Movimento",
       id: row.id,
       description: row.description,
       category: row.category,
       amount: row.amount,
-      movement_date: row.date,
+      date: row.date,
       comment: row.observations,
       categories: this.categories
     };

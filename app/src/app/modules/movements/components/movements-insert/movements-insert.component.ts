@@ -13,6 +13,8 @@ export class MovementsInsertComponent implements OnInit {
   @Input() public submitCallback: (data: any) => void;
   insertMovementForm: FormGroup;
 
+  title = null;
+
   description = null;
   category = null;
   amount = null;
@@ -25,14 +27,16 @@ export class MovementsInsertComponent implements OnInit {
     public dialogRef: MatDialogRef<MovementsInsertComponent>,
     @Inject(MAT_DIALOG_DATA) data) {
 
+      this.title = data.title;
+      this.categories = data.categories;
+
       if ("id" in data) {
         this.description = data.description;
         this.category = data.category.id;
         this.amount = data.amount;
-        this.date = data.date;
+        this.date = new FormControl(data.date);
         this.comment = data.comment;
       }
-      this.categories = data.categories
     }
 
   ngOnInit() {
@@ -40,7 +44,7 @@ export class MovementsInsertComponent implements OnInit {
       'description': new FormControl(this.description, Validators.required),
       'category': new FormControl(this.category, Validators.required),
       'amount': new FormControl(this.amount, Validators.required),
-      'movement_date': new FormControl(this.date, Validators.required),
+      'date': new FormControl(this.date, Validators.required),
       'comment': new FormControl(this.comment),
     });
   }

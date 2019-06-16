@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Inserir Movimento</h2>
+<h2 mat-dialog-title>{{title}}</h2>
 
 <mat-dialog-content [formGroup]="insertMovementForm">
 
@@ -7,7 +7,7 @@
   </mat-form-field>
 
   <mat-form-field>
-    <mat-select [(ngModel)]="category" placeholder="Selecionar Categoria" formControlName="category">
+    <mat-select [(value)]="category" placeholder="Selecionar Categoria" formControlName="category">
       <mat-option *ngFor="let category of categories" [value]="category.id">{{category.name}}</mat-option>
     </mat-select>
   </mat-form-field>
@@ -18,7 +18,7 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [matDatepicker]="picker" placeholder="Data do Movimento" formControlName="movement_date">
+    <input matInput [matDatepicker]="picker" placeholder="Data do Movimento" [formControl]="date">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
