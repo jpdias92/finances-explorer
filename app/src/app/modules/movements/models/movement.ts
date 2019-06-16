@@ -16,7 +16,7 @@ export class Movement {
             date: movement.movement_date,
             description: movement.description,
             amount: movement.amount,
-            category: categories.find(cat => cat.id == movement.category_id).name,
+            category: categories.find(cat => cat.id == movement.category_id),
             observations: movement.comment
             };
         });
