@@ -14,6 +14,7 @@ export class MovementsInsertComponent implements OnInit {
   insertMovementForm: FormGroup;
 
   title = null;
+  action = null;
 
   description = null;
   category = null;
@@ -28,6 +29,7 @@ export class MovementsInsertComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) data) {
 
       this.title = data.title;
+      this.action = data.action;
       this.categories = data.categories;
 
       if ("id" in data) {

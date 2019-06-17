@@ -43,7 +43,19 @@ class MovementDaoMysql:
         result = cursor.execute(sql_insert_query)
         self.mysql.commit()
         print(result)
-
+        
+    def put(self, movement_id, mov: Movement):
+        cursor = self.mysql.cursor()
+        sql_insert_query = f"""
+            UPDATE finances_explorer.movements
+            SET movement_category_id = {mov.category_id}, amount = {mov.amount}, 
+                movement_date = '{mov.movement_date}', description = '{mov.description}',
+                comment = '{mov.comment}'
+            WHERE id = {movement_id};
+        """
+        result = cursor.execute(sql_insert_query)
+        self.mysql.commit()
+        print(result)
 
 
 

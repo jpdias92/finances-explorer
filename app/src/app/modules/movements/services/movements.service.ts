@@ -23,7 +23,16 @@ export class MovementsService {
     return this.httpClient.post(`${environment.host}/finances_explorer/movements/`,
       {
         "category_id": Number(formData.category), "amount": formData.amount,
-        "movement_date": this.datepipe.transform(formData.movement_date, 'yyyy-MM-dd'),
+        "movement_date": this.datepipe.transform(formData.date.value, 'yyyy-MM-dd'),
+        "description": formData.description, "comment": (formData.comment || "")
+      });
+  }
+
+  public putMovement(movement_id: string, formData: any) {
+    return this.httpClient.put(`${environment.host}/finances_explorer/movements/${movement_id}`,
+      {
+        "category_id": Number(formData.category), "amount": formData.amount,
+        "movement_date": this.datepipe.transform(formData.date.value, 'yyyy-MM-dd'),
         "description": formData.description, "comment": (formData.comment || "")
       });
   }

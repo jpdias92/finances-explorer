@@ -82,6 +82,7 @@ export class MovementsListComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.data = {
       title: "Inserir Movimento",
+      action: "INSERIR",
       categories: this.categories
     };
 
@@ -113,6 +114,7 @@ export class MovementsListComponent implements OnInit {
 
     dialogConfig.data = {
       title: "Editar Movimento",
+      action: "MODIFICAR",
       id: row.id,
       description: row.description,
       category: row.category,
@@ -124,13 +126,13 @@ export class MovementsListComponent implements OnInit {
 
     const dialogRef = this.dialog.open(MovementsInsertComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(
-      data => this.submitEdit(data)
+      data => this.submitEdit(row.id, data)
     );
   }
 
-  submitEdit(data: any) {
+  submitEdit(movement_id: string, data: any) {
     if (data) {
-      this.movementsService.postMovement(data).subscribe(
+      this.movementsService.putMovement(movement_id, data).subscribe(
         (results: any) => {
           this.getMovementsData();
         },

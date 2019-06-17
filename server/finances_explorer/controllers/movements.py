@@ -44,6 +44,24 @@ class MovementCollection(Resource):
 @ns.route('/<int:movement_id>')
 @api.response(404, 'Movement not found.')
 class MovementItem(Resource):
+
+    @api.response(200, 'Movement successfully edited.')
+    @api.expect(Movement.post_movement_request_model)
+    @inject_dao
+    def put(self, movement_id, movement_dao_mysql: MovementDaoMysql):
+        """Edits a movement."""
+        movement = Movement(
+            category_id=request.json.get('category_id'),
+            amount=request.json.get('amount'),
+            movement_date=request.json.get('movement_date'),
+            description=request.json.get('description'),
+            comment=request.json.get('comment'),
+        )
+
+        movement_dao_mysql.put(movement_id, movement)
+
+        return None, 200
+
     @api.response(204, 'Movement successfully deleted.')
     @api.response(403, 'Movement cannot be deleted')
     @inject_dao
