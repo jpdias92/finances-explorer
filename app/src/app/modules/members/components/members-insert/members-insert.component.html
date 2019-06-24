@@ -7,6 +7,10 @@
   </mat-form-field>
 
   <mat-form-field>
+    <input matInput placeholder="Título" formControlName="personal_title">
+  </mat-form-field>
+
+  <mat-form-field>
     <mat-select [(value)]="gender" placeholder="Selecionar Género" formControlName="gender">
       <mat-option value=0 type="number">Masculino</mat-option>
       <mat-option value=1 type="number">Feminino</mat-option>
@@ -14,9 +18,93 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [matDatepicker]="picker" placeholder="Data de Nascimento" [formControl]="birth_date">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
+    <input matInput placeholder="Nacionalidade" formControlName="nationality">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="birth_date_picker" placeholder="Data de Nascimento" [formControl]="birth_date">
+    <mat-datepicker-toggle matSuffix [for]="birth_date_picker"></mat-datepicker-toggle>
+    <mat-datepicker #birth_date_picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="death_date_picker" placeholder="Data de Falecimento" [formControl]="death_date">
+    <mat-datepicker-toggle matSuffix [for]="death_date_picker"></mat-datepicker-toggle>
+    <mat-datepicker #death_date_picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Rua" formControlName="street_name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Número da Porta" formControlName="door_number">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Andar" formControlName="flat">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Código Postal" formControlName="postal_code">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Cidade" formControlName="city">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Contacto Principal" formControlName="contact1">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Contacto Alternativo" formControlName="contact2">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Email" formControlName="email">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="baptism_date_picker" placeholder="Data de Baptismo" [formControl]="baptism_date">
+    <mat-datepicker-toggle matSuffix [for]="baptism_date_picker"></mat-datepicker-toggle>
+    <mat-datepicker #baptism_date_picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="communion_date_picker" placeholder="Data da Comunhão" [formControl]="communion_date">
+    <mat-datepicker-toggle matSuffix [for]="communion_date_picker"></mat-datepicker-toggle>
+    <mat-datepicker #communion_date_picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="confirmation_date_picker" placeholder="Data da Confirmação" [formControl]="confirmation_date">
+    <mat-datepicker-toggle matSuffix [for]="confirmation_date_picker"></mat-datepicker-toggle>
+    <mat-datepicker #confirmation_date_picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Estado Civil" formControlName="marital_status">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Companheiro" formControlName="partner_id">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Ocupação" formControlName="occupation">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Habilitações Literárias" formControlName="professional_qualifications">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Pai" formControlName="father_id">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Mãe" formControlName="mother_id">
   </mat-form-field>
 
 </mat-dialog-content>

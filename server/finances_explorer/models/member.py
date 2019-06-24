@@ -17,7 +17,7 @@ class Member:
         'street_name': fields.String(description="Member's address field: street"),
         'door_number': fields.String(description="Member's address field: door number"),
         'flat': fields.String(description="Member's address field: flat number"),
-        'postal-code': fields.String(description="Member's address field: postal code"),
+        'postal_code': fields.String(description="Member's address field: postal code"),
         'city': fields.String(description="Member's address field: city"),
         'contact1': fields.String(description="Member's main contact"),
         'contact2': fields.String(description="Member's secondary contact"),

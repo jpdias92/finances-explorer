@@ -1,40 +1,21 @@
 @import '../../../../../finances-explorer-project-theme.scss';
 
 table {
-    width: 100%;
-}
-
-.mat-form-field {
-  font-size: 14px;
   width: 100%;
+  table-layout: fixed;
 }
 
-td, th {
-  width: 25%;
+th, td {
+  overflow: hidden;
+  width: 100px;
+  overflow-wrap: break-word;
+}
+
+
+.mat-cell {
+  padding: 8px 8px 8px 0;
 }
 
 .mat-icon {
   color: mat-color($primary, 500);
-}
-
-$icon-small-container-size: 30px;
-$icon-small-size: 25px;
-
-.mat-icon-button.small {
-  width: $icon-small-container-size;
-  height: $icon-small-container-size;
-  line-height: $icon-small-container-size;
-
-  .mat-icon, .mat-icon-button i {
-    line-height: $icon-small-size;
-  }
-
-  .mat-icon {
-    width: $icon-small-size;
-    height: $icon-small-size;
-  }
-
-  .material-icons {
-    font-size: $icon-small-size;
-  }
 }

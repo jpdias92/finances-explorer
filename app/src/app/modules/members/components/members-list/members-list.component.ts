@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { MatDialog, MatDialogConfig } from "@angular/material";
-import { zip } from "rxjs";
 
 import { MembersService } from '../../services/members.service';
 import { Member } from '../../models/member';
@@ -18,7 +17,9 @@ import { ConfirmComponent } from '../../../../shared/confirm/confirm.component';
   templateUrl: 'members-list.component.html',
 })
 export class MembersListComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'birth_date', 'actions'];
+  displayedColumns: string[] = ['id', 'title', 'name', 'gender', 'nationality', 'birth_date', 'death_date', 'address',
+  'contact1', 'contact2', 'email', 'baptism_date', 'communion_date', 'confirmation_date', 'marital_status',
+  'partner_id', 'occupation', 'professional_qualifications', 'father_id', 'mother_id', 'actions'];
   dataSource: MatTableDataSource<Member>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -104,6 +105,8 @@ export class MembersListComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
+    dialogConfig.height = '40%';
+    dialogConfig.height = '60%';
 
     dialogConfig.data = {
       title: "Editar Membro",
