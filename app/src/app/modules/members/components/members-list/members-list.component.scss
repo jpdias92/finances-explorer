@@ -1,0 +1,40 @@
+@import '../../../../../finances-explorer-project-theme.scss';
+
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+
+.mat-icon {
+  color: mat-color($primary, 500);
+}
+
+$icon-small-container-size: 30px;
+$icon-small-size: 25px;
+
+.mat-icon-button.small {
+  width: $icon-small-container-size;
+  height: $icon-small-container-size;
+  line-height: $icon-small-container-size;
+
+  .mat-icon, .mat-icon-button i {
+    line-height: $icon-small-size;
+  }
+
+  .mat-icon {
+    width: $icon-small-size;
+    height: $icon-small-size;
+  }
+
+  .material-icons {
+    font-size: $icon-small-size;
+  }
+}

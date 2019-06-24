@@ -161,7 +161,7 @@ export class MovementsListComponent implements OnInit {
       (err: any) => {
         // on error
         console.log(err);
-        this.notificationComponent.showNotification(`Error deleting guideline: ${err.error}`, 4000);
+        this.notificationComponent.showNotification(`Erro ao apagar movimento: ${err.error}`, 4000);
       });
   }
 

@@ -31,9 +31,9 @@ export class AppComponent implements AfterViewInit {
       route: 'movements'
     },
     {
-      displayName: 'Contribuintes',
+      displayName: 'Membros',
       iconName: 'insert_drive_file',
-      route: 'donors'
+      route: 'members'
     },
     {
       displayName: 'Gastos',

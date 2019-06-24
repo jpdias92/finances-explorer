@@ -1,13 +1,13 @@
 import { MovementsModule } from './movements.module';
 
-describe('AlgoDocModule', () => {
-  let algoDocModule: MovementsModule;
+describe('MovementsModule', () => {
+  let movementsModule: MovementsModule;
 
   beforeEach(() => {
-    algoDocModule = new MovementsModule();
+    movementsModule = new MovementsModule();
   });
 
   it('should create an instance', () => {
-    expect(algoDocModule).toBeTruthy();
+    expect(movementsModule).toBeTruthy();
   });
 });

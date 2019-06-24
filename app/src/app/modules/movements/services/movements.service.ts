@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
-  HttpClient,
-  HttpRequest,
-  HttpEventType,
-  HttpResponse
+  HttpClient
 } from '@angular/common/http';
 import { DatePipe } from '@angular/common'
 

@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>{{title}}</h2>
+
+<mat-dialog-content [formGroup]="insertMemberForm">
+
+  <mat-form-field>
+    <input matInput placeholder="Nome" formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select [(value)]="gender" placeholder="Selecionar Género" formControlName="gender">
+      <mat-option value=0 type="number">Masculino</mat-option>
+      <mat-option value=1 type="number">Feminino</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Data de Nascimento" [formControl]="birth_date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<div mat-dialog-actions>
+  <button mat-button color="accent" (click)="close()">CANCELAR</button>
+  <button mat-button color="accent" (click)="save()">{{action}}</button>
+</div>
