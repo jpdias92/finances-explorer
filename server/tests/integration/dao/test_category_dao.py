@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from finances_explorer.mysql.mysql_connector import get_mysql, close_mysql
+from finances_explorer.mysql.mysql_connector import get_mysql
 from finances_explorer.dao.category_dao_mysql import CategoryDaoMysql
 
 
@@ -12,7 +12,7 @@ class TestCategoryDaoEs(TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        close_mysql()
+        cls.mysql.close()
 
     def test_get_all(self):
         self.assertEqual(len(self.dao.get_all()), 2)

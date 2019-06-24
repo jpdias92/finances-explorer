@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from finances_explorer import create_app
-from finances_explorer.mysql.mysql_connector import get_mysql, close_mysql
+from finances_explorer.mysql.mysql_connector import get_mysql
 from finances_explorer.dao.category_dao_mysql import CategoryDaoMysql
 
 
@@ -24,7 +24,7 @@ class TestCategoryController(TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        close_mysql()
+        cls.mysql.close()
 
     def test_get_categories(self):
         """

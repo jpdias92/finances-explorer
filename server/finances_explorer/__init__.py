@@ -7,6 +7,7 @@ from flask import Blueprint
 from settings import profiles, logging_conf_path
 from finances_explorer.controllers.movements import ns as ns_movements
 from finances_explorer.controllers.categories import ns as ns_categories
+from finances_explorer.controllers.members import ns as ns_members
 from finances_explorer.restplus import api
 
 logging.config.fileConfig(logging_conf_path)
@@ -30,6 +31,7 @@ def create_app(config_name):
     api.init_app(blueprint)
     api.add_namespace(ns_movements)
     api.add_namespace(ns_categories)
+    api.add_namespace(ns_members)
     app.register_blueprint(blueprint)
 
     profiles[config_name].init_app(app)

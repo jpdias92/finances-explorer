@@ -2,10 +2,10 @@ from unittest import TestCase
 
 from finances_explorer import create_app
 from finances_explorer.mysql.mysql_connector import get_mysql
-from finances_explorer.dao.movement_dao_mysql import MovementDaoMysql
+from finances_explorer.dao.member_dao_mysql import MemberDaoMysql
 
 
-class TestMovementController(TestCase):
+class TestMemberController(TestCase):
 
     def setUp(self):
         self.app = create_app('testing')
@@ -20,15 +20,15 @@ class TestMovementController(TestCase):
     @classmethod
     def setUpClass(cls):
         cls.mysql = get_mysql()
-        cls.dao = MovementDaoMysql(cls.mysql)
+        cls.dao = MemberDaoMysql(cls.mysql)
 
     @classmethod
     def tearDownClass(cls):
         cls.mysql.close()
 
-    def test_get_movements(self):
+    def test_get_members(self):
         """
-        GET /movements
+        GET /members
         """
-        response = self.client.get('api/finances_explorer/movements/')
+        response = self.client.get('api/finances_explorer/members/')
         self.assertEqual(200, response.status_code)
