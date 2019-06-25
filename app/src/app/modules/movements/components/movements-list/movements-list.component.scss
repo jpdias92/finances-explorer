@@ -1,5 +1,6 @@
 @import '../../../../../finances-explorer-project-theme.scss';
 
+
 table {
     width: 100%;
 }
@@ -9,8 +10,14 @@ table {
   width: 100%;
 }
 
-td, th {
-  width: 25%;
+th, td {
+  overflow: hidden;
+  width: 16%;
+  overflow-wrap: break-word;
+}
+
+.mat-cell {
+  padding: 8px 8px 8px 0;
 }
 
 .mat-icon {

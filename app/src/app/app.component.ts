@@ -27,34 +27,34 @@ export class AppComponent implements AfterViewInit {
     },
     {
       displayName: 'Movimentos',
-      iconName: 'library_add',
+      iconName: 'euro_symbol',
       route: 'movements'
     },
     {
       displayName: 'Membros',
-      iconName: 'insert_drive_file',
+      iconName: 'group',
       route: 'members'
     },
     {
-      displayName: 'Gastos',
-      iconName: 'settings_applications',
-      children: [
-        {
-          displayName: 'Aqui não há nada',
-          iconName: 'settings_applications',
-          route: 'rules'
-        }
-      ]
-    },
-    {
-      displayName: 'Donativos',
+      displayName: 'Contribuições',
       iconName: 'supervised_user_circle',
       route: ''
     },
     {
-      displayName: 'Case Management',
-      iconName: 'assignment',
-      route: ''
+      displayName: 'Backoffice',
+      iconName: 'settings_applications',
+      children: [
+        {
+          displayName: 'Categorias de Movimentos',
+          iconName: 'settings_applications',
+          route: 'rules'
+        },
+        {
+          displayName: 'Nacionalidades',
+          iconName: 'settings_applications',
+          route: 'rules'
+        }
+      ]
     }
   ];
 
