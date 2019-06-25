@@ -1,4 +1,3 @@
-import { MembersInsertComponent } from '../components/members-insert/members-insert.component';
 
 export class Member {
     id: string;
@@ -7,6 +6,7 @@ export class Member {
     gender: string;
     nationality: string;
     birth_date: Date;
+    current_age: Number;
     death_date: Date;
     street_name: string;
     door_number: string;
@@ -34,7 +34,7 @@ export class Member {
         return data.map((member: any) => {
 
             var partner: Member = data.find(m => m.member_id == member.partner_id);
-            var partner_name_aux = mother ? partner.name : null;
+            var partner_name_aux = partner ? partner.name : null;
 
             var father: Member = data.find(m => m.member_id == member.father_id);
             var father_name_aux = father ? father.name : null;
@@ -42,13 +42,17 @@ export class Member {
             var mother: Member = data.find(m => m.member_id == member.mother_id);
             var mother_name_aux = mother ? mother.name : null;
 
+            var timeDiff = Math.abs(Date.now() - (new Date(member.birth_date)).getTime());
+            var age = Math.floor((timeDiff / (1000 * 3600 * 24))/365.25);
+
             return {
                 id: member.member_id,
                 title: member.title,
                 name: member.name,
                 gender: member.gender,
                 nationality: member.nationality,
-                birth_date: member.birth_date,
+                birth_date: new Date(member.birth_date),
+                current_age: age,
                 death_date: member.death_date,
                 street_name: member.street_name,
                 door_number: member.door_number,

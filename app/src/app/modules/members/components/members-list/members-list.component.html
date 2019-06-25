@@ -6,6 +6,32 @@
   <button class="insert_btn" mat-raised-button color="accent" (click)="openInsertDialog()">+</button>
 </div>
 
+<button mat-button [matMenuTriggerFor]="menu">
+  <mat-icon [ngStyle]=filterColor>filter_list</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="filterMembers('MONTH_BIRTHDAYS')">
+    <mat-icon>cake</mat-icon>
+    <span>Aniversários do Próximo Mês</span>
+  </button>
+  <button mat-menu-item (click)="filterMembers('HAVE_EMAIL')">
+    <mat-icon>alternate_email</mat-icon>
+    <span>Membros com E-mail</span>
+  </button>
+  <button mat-menu-item (click)="filterMembers('VOTERS')">
+    <mat-icon>how_to_vote</mat-icon>
+    <span>Votantes</span>
+  </button>
+  <button mat-menu-item (click)="filterMembers('MARRIED')">
+    <mat-icon>wc</mat-icon>
+    <span>Casados</span>
+  </button>
+  <button mat-menu-item (click)="filterMembers('RESET')">
+    <mat-icon>clear</mat-icon>
+    <span>Limpar Filtros</span>
+  </button>
+</mat-menu>
+
 <div class="members-container mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort>
 
@@ -45,6 +71,12 @@
       <td mat-cell *matCellDef="let row"> {{row.birth_date | date :  "y/MM/dd"}} </td>
     </ng-container>
 
+    <!-- Current Age Column -->
+    <ng-container matColumnDef="current_age">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Idade Atual</th>
+      <td mat-cell *matCellDef="let row"> {{row.current_age}} </td>
+    </ng-container>
+
     <!-- Death Date Column -->
     <ng-container matColumnDef="death_date">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Data de Falecimento </th>
@@ -54,7 +86,8 @@
     <!-- Address Column -->
     <ng-container matColumnDef="address">
       <th mat-header-cell *matHeaderCellDef> Morada </th>
-      <td mat-cell *matCellDef="let row"> {{row.street_name}} {{row.door_number}}, {{ row.flat }}, {{row.postal_code}}, {{row.city}} </td>
+      <td mat-cell *matCellDef="let row"> {{row.street_name}} {{row.door_number}}, {{ row.flat }}, {{row.postal_code}},
+        {{row.city}} </td>
     </ng-container>
 
     <!-- Contact1 Column -->

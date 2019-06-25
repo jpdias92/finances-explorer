@@ -17,12 +17,14 @@ import { ConfirmComponent } from '../../../../shared/confirm/confirm.component';
   templateUrl: 'members-list.component.html',
 })
 export class MembersListComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'title', 'name', 'gender', 'nationality', 'birth_date', 'death_date', 'address',
-  'contact1', 'contact2', 'email', 'baptism_date', 'communion_date', 'confirmation_date', 'marital_status',
-  'partner_id', 'occupation', 'professional_qualifications', 'father_id', 'mother_id', 'actions'];
+  displayedColumns: string[] = ['id', 'title', 'name', 'gender', 'nationality', 'birth_date', 'current_age',
+  'death_date', 'address', 'contact1', 'contact2', 'email', 'baptism_date', 'communion_date', 'confirmation_date',
+  'marital_status', 'partner_id', 'occupation', 'professional_qualifications', 'father_id', 'mother_id', 'actions'];
   dataSource: MatTableDataSource<Member>;
 
   members: Member[];
+
+  filterColor = {};
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -50,16 +52,20 @@ export class MembersListComponent implements OnInit {
     }
   }
 
+  updateDataSource(members: Member[]) {
+    this.dataSource = new MatTableDataSource(members);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+    console.log(this.dataSource);
+  }
+
   getMembersData() {
     this.membersService.getMembers().subscribe(
       (members: any) => {
         // on success
         console.log(members);
         this.members = Member.map(members);
-        this.dataSource = new MatTableDataSource(this.members);
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-        console.log(this.dataSource);
+        this.updateDataSource(this.members);
       },
       (err: any) => {
         // on error
@@ -158,6 +164,51 @@ export class MembersListComponent implements OnInit {
         console.log(err);
         this.notificationComponent.showNotification(`Erro ao apagar membro: ${err.error}`, 4000);
       });
+  }
+
+  filterMembers(filter: string) {
+
+    var now = new Date();
+
+    switch (filter) {
+      case 'MONTH_BIRTHDAYS': {
+        this.updateDataSource(this.members.filter(m =>
+          m.birth_date.getMonth() == (new Date(now.getFullYear(), now.getMonth() + 1, 1).getMonth())));
+        this.filterColor = {'color': 'white', 'background-color':"#00A8F4", 'border-radius': '5px'};
+        break;
+      }
+
+      case 'HAVE_EMAIL': {
+        this.updateDataSource(this.members.filter(m => m.email));
+        this.filterColor = {'color': 'white', 'background-color':"#00A8F4", 'border-radius': '5px'};
+        break;
+      }
+
+      case 'VOTERS': {
+        this.updateDataSource(this.members.filter(m => m.current_age >= 16));
+        this.filterColor = {'color': 'white', 'background-color':"#00A8F4", 'border-radius': '5px'};
+        break;
+      }
+
+      case 'MARRIED': {
+        this.updateDataSource(this.members.filter(m => m.marital_status == "Casado"));
+        this.filterColor = {'color': 'white', 'background-color':"#00A8F4", 'border-radius': '5px'};
+        break;
+      }
+
+      case 'RESET': {
+        this.getMembersData();
+        this.filterColor = {};
+        break;
+      }
+
+      default: {
+        this.getMembersData();
+        this.filterColor = {};
+        break;
+      }
+    }
+
   }
 
 }
