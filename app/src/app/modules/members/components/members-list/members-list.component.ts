@@ -22,6 +22,8 @@ export class MembersListComponent implements OnInit {
   'partner_id', 'occupation', 'professional_qualifications', 'father_id', 'mother_id', 'actions'];
   dataSource: MatTableDataSource<Member>;
 
+  members: Member[];
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
@@ -53,7 +55,8 @@ export class MembersListComponent implements OnInit {
       (members: any) => {
         // on success
         console.log(members);
-        this.dataSource = new MatTableDataSource(Member.map(members));
+        this.members = Member.map(members);
+        this.dataSource = new MatTableDataSource(this.members);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
         console.log(this.dataSource);
@@ -77,7 +80,8 @@ export class MembersListComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.data = {
       title: "Inserir Membro",
-      action: "INSERIR"
+      action: "INSERIR",
+      members: this.members
     };
 
 
@@ -109,6 +113,7 @@ export class MembersListComponent implements OnInit {
     dialogConfig.data = {
       title: "Editar Membro",
       action: "MODIFICAR",
+      members: this.members,
 
       id: row.id,
       member: row,

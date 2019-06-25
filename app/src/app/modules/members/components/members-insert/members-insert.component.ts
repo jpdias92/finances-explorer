@@ -16,6 +16,7 @@ export class MembersInsertComponent implements OnInit {
 
   title = null;
   action = null;
+  members: Member[] = null;
 
   name = null;
   personal_title = null;
@@ -47,6 +48,7 @@ export class MembersInsertComponent implements OnInit {
 
       this.title = data.title;
       this.action = data.action;
+      this.members = data.members;
 
       if ("id" in data) {
         this.personal_title = data.member.personal_title;
@@ -111,5 +113,13 @@ export class MembersInsertComponent implements OnInit {
 
   close() {
     this.dialogRef.close();
+  }
+
+  get filterMales() {
+    return this.members.filter( m => m.gender == '0');
+  }
+
+  get filterFemales() {
+    return this.members.filter( m => m.gender == '1');
   }
 }
