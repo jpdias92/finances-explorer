@@ -105,8 +105,6 @@ export class MembersListComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.height = '40%';
-    dialogConfig.height = '60%';
 
     dialogConfig.data = {
       title: "Editar Membro",
