@@ -62,7 +62,7 @@ export class MembersInsertComponent implements OnInit {
         this.city = data.member.city;
         this.contact1 = data.member.contact1;
         this.contact2 = data.member.contact2;
-        this.email = data.member.email
+        this.email = data.member.email;
         this.baptism_date = new FormControl(data.member.baptism_date);
         this.communion_date = new FormControl(data.member.communion_date);
         this.confirmation_date = new FormControl(data.member.confirmation_date);

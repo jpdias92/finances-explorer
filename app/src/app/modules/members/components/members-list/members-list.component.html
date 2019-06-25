@@ -102,7 +102,7 @@
     <!-- Partner ID Column -->
     <ng-container matColumnDef="partner_id">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Companheiro </th>
-      <td mat-cell *matCellDef="let row"> {{row.partner_id}} </td>
+      <td mat-cell *matCellDef="let row"> {{row.partner_name}} </td>
     </ng-container>
 
     <!-- Occupation Column -->
@@ -120,13 +120,13 @@
     <!-- Father ID Column -->
     <ng-container matColumnDef="father_id">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Pai </th>
-      <td mat-cell *matCellDef="let row"> {{row.father_id}} </td>
+      <td mat-cell *matCellDef="let row"> {{row.father_name}} </td>
     </ng-container>
 
     <!-- Mother ID Column -->
     <ng-container matColumnDef="mother_id">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Mãe </th>
-      <td mat-cell *matCellDef="let row"> {{row.mother_id}} </td>
+      <td mat-cell *matCellDef="let row"> {{row.mother_name}} </td>
     </ng-container>
 
     <!-- Actions Column -->

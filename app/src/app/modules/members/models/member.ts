@@ -1,3 +1,5 @@
+import { MembersInsertComponent } from '../components/members-insert/members-insert.component';
+
 export class Member {
     id: string;
     title: string;
@@ -19,14 +21,27 @@ export class Member {
     confirmation_date: Date;
     marital_status: string;
     partner_id: string;
+    partner_name: string;
     occupation: string;
     professional_qualifications: string;
     father_id: string;
+    father_name: string;
     mother_id: string;
+    mother_name: string;
 
     public static map(data: any): Member[] {
 
         return data.map((member: any) => {
+
+            var partner: Member = data.find(m => m.member_id == member.partner_id);
+            var partner_name_aux = mother ? partner.name : null;
+
+            var father: Member = data.find(m => m.member_id == member.father_id);
+            var father_name_aux = father ? father.name : null;
+
+            var mother: Member = data.find(m => m.member_id == member.mother_id);
+            var mother_name_aux = mother ? mother.name : null;
+
             return {
                 id: member.member_id,
                 title: member.title,
@@ -48,13 +63,15 @@ export class Member {
                 confirmation_date: member.confirmation_date,
                 marital_status: member.marital_status,
                 partner_id: member.partner_id,
+                partner_name: partner_name_aux,
                 occupation: member.occupation,
                 professional_qualifications: member.professional_qualifications,
                 father_id: member.father_id,
+                father_name: father_name_aux,
                 mother_id: member.mother_id,
+                mother_name: mother_name_aux,
             };
         });
     }
-
 
 }
