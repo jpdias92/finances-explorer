@@ -45,12 +45,28 @@ export class Member {
             var timeDiff = Math.abs(Date.now() - (new Date(member.birth_date)).getTime());
             var age = Math.floor((timeDiff / (1000 * 3600 * 24))/365.25);
 
+            var nationality = null;
+            switch(member.nationality) {
+                case "1":nationality = "Portuguesa"; break;
+                case "2":nationality = "Brasileira"; break;
+                case "3":nationality = "Americana"; break;
+                case "4":nationality = "Espanhola"; break;
+                case "5":nationality = "Inglesa"; break;
+                case "6":nationality = "Francesa"; break;
+                case "7":nationality = "Alemã"; break;
+                case "8":nationality = "Japonesa"; break;
+                case "9":nationality = "Chinesa"; break;
+                case "10":nationality = "Angolana"; break;
+                default:nationality = "Portuguesa"; break;
+            }
+
             return {
                 id: member.member_id,
                 title: member.title,
                 name: member.name,
                 gender: member.gender,
                 nationality: member.nationality,
+                nationality_description: nationality,
                 birth_date: new Date(member.birth_date),
                 current_age: age,
                 death_date: member.death_date,

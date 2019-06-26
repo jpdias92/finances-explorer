@@ -17,8 +17,20 @@
     </mat-select>
   </mat-form-field>
 
+
   <mat-form-field>
-    <input matInput placeholder="Nacionalidade" formControlName="nationality">
+    <mat-select [(value)]="nationality" placeholder="Nacionalidade" formControlName="nationality">
+      <mat-option value=1 type="number">Portuguesa</mat-option>
+      <mat-option value=2 type="number">Brasileira</mat-option>
+      <mat-option value=3 type="number">Americana</mat-option>
+      <mat-option value=4 type="number">Espanhola</mat-option>
+      <mat-option value=5 type="number">Inglesa</mat-option>
+      <mat-option value=6 type="number">Francesa</mat-option>
+      <mat-option value=7 type="number">Alemã</mat-option>
+      <mat-option value=8 type="number">Japonesa</mat-option>
+      <mat-option value=9 type="number">Chinesa</mat-option>
+      <mat-option value=10 type="number">Angolana</mat-option>
+    </mat-select>
   </mat-form-field>
 
   <mat-form-field>

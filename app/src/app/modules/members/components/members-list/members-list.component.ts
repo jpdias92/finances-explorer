@@ -179,13 +179,13 @@ export class MembersListComponent implements OnInit {
       }
 
       case 'HAVE_EMAIL': {
-        this.updateDataSource(this.members.filter(m => m.email));
+        this.updateDataSource(this.members.filter(m => m.email && !m.death_date));
         this.filterColor = {'color': 'white', 'background-color':"#00A8F4", 'border-radius': '5px'};
         break;
       }
 
       case 'VOTERS': {
-        this.updateDataSource(this.members.filter(m => m.current_age >= 16));
+        this.updateDataSource(this.members.filter(m => m.current_age >= 16 && !m.death_date));
         this.filterColor = {'color': 'white', 'background-color':"#00A8F4", 'border-radius': '5px'};
         break;
       }

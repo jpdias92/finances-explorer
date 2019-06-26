@@ -82,7 +82,7 @@ export class MembersInsertComponent implements OnInit {
       'personal_title': new FormControl(this.personal_title),
       'name': new FormControl(this.name, Validators.required),
       'gender': new FormControl(String(this.gender), Validators.required),
-      'nationality': new FormControl(this.nationality),
+      'nationality': new FormControl(String(this.nationality)),
       'birth_date': new FormControl(this.birth_date, Validators.required),
       'death_date': new FormControl(this.death_date),
       'street_name': new FormControl(this.street_name),
