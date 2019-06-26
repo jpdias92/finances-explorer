@@ -23,7 +23,7 @@ export class AppComponent implements AfterViewInit {
     {
       displayName: 'Dashboard',
       iconName: 'dashboard',
-      route: ''
+      route: 'dashboard'
     },
     {
       displayName: 'Movimentos',

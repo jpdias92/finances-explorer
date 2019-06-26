@@ -7,7 +7,7 @@ USE finances_explorer;
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql:3306
--- Generation Time: Jun 26, 2019 at 06:16 PM
+-- Generation Time: Jun 26, 2019 at 09:08 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.19
 
@@ -77,23 +77,23 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`id`, `title`, `name`, `gender`, `nationality`, `birth_date`, `death_date`, `street_name`, `door_number`, `flat`, `postal_code`, `city`, `contact1`, `contact2`, `email`, `baptism_date`, `communion_date`, `confirmation_date`, `marital_status`, `partner_id`, `occupation`, `professional_qualifications`, `father_id`, `mother_id`) VALUES
-(1, 'Miss', 'Adelaide Pereira', 1, 1, '1928-05-06', NULL, 'R. Pádua Correia', '166', '1º Dtº', '4430-999', 'Vila Nova de Gaia', '22 3860549', '919246535', NULL, NULL, NULL, '1943-01-15', 'Solteiro', NULL, 'Funcionária Pública Reformada', '9º ano', NULL, NULL),
-(2, NULL, 'Afonso Santos', 0, 1, '1953-03-15', NULL, 'R. Dr. Francisco Sá Carneiro', '1366', '', '4430-999', 'Vila Nova de Gaia', '22 9789768', '22 2006908', 'afonso.santos@gmail.com', '1955-06-04', NULL, NULL, 'Casado', 11, 'Administrativo', 'Curso Profissional de nível 3', NULL, NULL),
-(3, 'Dr.', 'Tiago Gomes Cunha', 0, 1, '1934-11-30', '2019-05-08', 'R Pombal', '14', '1º Esq.º', '6300-809', 'Guarda', '+351 212 714 472', NULL, NULL, '1935-09-08', '1944-07-16', '1950-04-02', 'Viúvo', NULL, 'Advogado Reformado', 'Licenciatura', NULL, NULL),
-(4, NULL, 'Rita Lima Barbosa Castro', 1, 2, '1946-09-30', NULL, 'Praça das Flores', '92', NULL, '2500-433', 'São Jacinto', '21 760 3798', NULL, NULL, NULL, NULL, NULL, 'Viúvo', 10, 'Dona de Casa', '4º ano', NULL, NULL),
-(5, NULL, 'Tiago Gomes Araújo', 0, 1, '1991-04-15', NULL, NULL, NULL, NULL, NULL, NULL, '912530408', '962556908', 'tiago.g.araujo@live.pt', '1992-08-30', '2000-02-06', '2008-11-16', 'Solteiro', NULL, 'Engenheiro Informático', 'Mestrado', NULL, NULL),
+(1, 'Miss', 'Adelaide Pereira', 1, 1, '1928-05-06', NULL, 'R. Pádua Correia', '166', '1º Dt.', '4430-999', 'Vila Nova de Gaia', '22 3860549', '919246535', NULL, NULL, NULL, '1943-01-15', 'Solteiro', NULL, 'Funcionária Pública Reformada', '9º ano', NULL, NULL),
+(2, NULL, 'Afonso Santos', 0, 1, '1953-03-15', NULL, 'R. Dr. Francisco Sá Carneiro', '1366', '3º Dt.', '4430-999', 'Vila Nova de Gaia', '22 9789768', '22 2006908', 'afonso.santos@gmail.com', '1955-06-04', NULL, NULL, 'Casado', 11, 'Administrativo', 'Curso Profissional de nível 3', NULL, NULL),
+(3, 'Dr.', 'Tiago Gomes Cunha', 0, 1, '1934-11-30', '2019-05-08', 'R Pombal', '14', '1º Esq.', '6300-809', 'Guarda', '+351 212 714 472', NULL, NULL, '1935-09-08', '1944-07-16', '1950-04-02', 'Viúvo', NULL, 'Advogado Reformado', 'Licenciatura', NULL, NULL),
+(4, NULL, 'Rita Lima Barbosa Castro', 1, 2, '1946-09-30', NULL, 'Praça das Flores', '92', '6º Centro-Esq.', '2500-433', 'São Jacinto', '21 760 3798', NULL, NULL, NULL, NULL, NULL, 'Viúvo', 10, 'Dona de Casa', '4º ano', NULL, NULL),
+(5, NULL, 'Tiago Gomes Araújo', 0, 1, '1991-04-15', NULL, 'R. Damião Góis', '79', '1º andar', '2695-093', 'São João da Talha', '912530408', '962556908', 'tiago.g.araujo@live.pt', '1992-08-30', '2000-02-06', '2008-11-16', 'Solteiro', NULL, 'Engenheiro Informático', 'Mestrado', NULL, NULL),
 (6, '', 'Carlos Pereira', 0, 4, '1994-08-25', NULL, 'Avenida Sacadura Cabral', '117', 'Hab. 61', '1685-539', 'Caneças', '912 162 893', NULL, 'carlos.per@hotmail.com', '2018-11-13', NULL, NULL, 'Solteiro', NULL, 'Ajudante de Cozinheiro', 'Curso Profissional', NULL, NULL),
 (7, 'Dra.', 'Gabriela Barbosa Castro Correia', 1, 1, '1982-06-20', NULL, 'Rua Vasco Gama', '96', '3º Centro', '4430-210', 'Vila Nova de Gaia', NULL, NULL, 'gaby.barbosa.castro@gmail.com', '1983-06-05', '1993-07-18', '2000-09-10', 'Casado', 9, 'Médica', 'Doutoramento', 10, 4),
 (8, NULL, 'Sara Castro Cunha Correia', 1, 1, '2018-12-11', NULL, 'Rua Vasco Gama', '96', '3º Centro', '4430-210', 'Vila Nova de Gaia', NULL, NULL, NULL, '2019-06-09', NULL, NULL, 'Solteiro', NULL, NULL, NULL, 9, 7),
 (9, 'Dr.', 'Alexandre Ribeiro Cunha Correia', 0, 1, '1980-09-13', NULL, 'Rua Vasco da Gama', '96', '3º Centro', '4430-210', 'Vila Nova de Gaia', '+351 912 764 472', '+351 212 716 472', 'alex.ribeiro.correia@gmail.com', '1981-06-07', '1990-09-09', '2000-09-10', 'Casado', 7, 'Cirurgião', 'Doutoramento', NULL, NULL),
-(10, 'Sr.', 'David Rocha Castro', 0, 1, '1940-06-05', '2010-02-06', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1941-08-10', NULL, NULL, 'Casado', 4, 'Sapateiro Reformado', '6º ano', NULL, NULL),
-(11, NULL, 'Melinda de Almeida Santos', 1, 1, '1953-10-18', NULL, 'R. Dr. Francisco Sá Carneiro', '1366', NULL, '4430-999', 'Vila Nova de Gaia', '22 9789768', NULL, NULL, NULL, NULL, NULL, 'Casado', 2, 'Reformada', NULL, NULL, NULL),
+(10, NULL, 'David Rocha Castro', 0, 1, '1940-06-05', '2010-02-06', 'Avenida João Crisóstomo', '74', 'Hab. 63', '1069-188', 'Lisboa', NULL, NULL, NULL, '1941-08-10', NULL, NULL, 'Casado', 4, 'Sapateiro Reformado', '6º ano', NULL, NULL),
+(11, NULL, 'Melinda de Almeida Santos', 1, 1, '1953-10-18', NULL, 'R. Dr. Francisco Sá Carneiro', '1366', '4º Esq.', '4430-999', 'Vila Nova de Gaia', '22 9789768', NULL, NULL, NULL, NULL, NULL, 'Casado', 2, 'Reformada', NULL, NULL, NULL),
 (12, NULL, 'Carolina Castro Cunha Correia', 1, 1, '2018-12-11', NULL, 'Rua Vasco Gama', '96', '3º Centro', '4430-210', 'Vila Nova de Gaia', NULL, NULL, NULL, '2019-06-09', NULL, NULL, 'Solteiro', NULL, NULL, NULL, 9, 7),
 (13, NULL, 'Júlio Castro Cunha Correia', 0, 1, '2010-08-02', NULL, 'Rua Vasco Gama', '96', '3º Centro', '4430-210', 'Vila Nova de Gaia', NULL, NULL, 'julio.castro.correia@hotmail.com', '2011-06-05', '2019-06-09', NULL, 'Solteiro', NULL, 'Estudante', '4º ano', 9, 7),
 (14, NULL, 'Daniel Santos Rodrigues', 0, 9, '1994-01-22', NULL, 'Avenida da República', '755', 'Hab. 93', '4430-180', 'Vila Nova de Gaia', '+1 332 555 0123', '+351 917 973 784', 'dany.s.rodrigues@gmail.com', '1994-05-08', '2000-02-06', '2008-11-16', 'Solteiro', NULL, 'Barbeiro', 'Curso Profissional', NULL, NULL),
 (15, 'Eng.', 'João Fernando Fontes Oliveira', 0, 1, '1963-01-01', NULL, 'Avenida da República', '488', 'Hab. 32', '4430-910', 'Vila Nova de Gaia', '+351 912 764 765', '22 286 6808', 'joao.ff.oliveira@hotmail.com', '1964-02-23', '1971-12-05', '1978-08-27', 'Casado', 16, 'Engenheiro Eletrotécnico', 'Licenciatura', NULL, NULL),
 (16, 'Enfª.', 'Carolina Almeida Oliveira', 1, 1, '1964-11-08', NULL, 'Avenida da República', '488', 'Hab. 32', '4430-910', 'Vila Nova de Gaia', '967 345 567', '22 286 6808', 'carol.alm.oliveira@gmail.com', '1965-04-04', '1973-01-07', NULL, 'Casado', 15, 'Enfermeira', 'Licenciatura', NULL, NULL),
-(17, NULL, 'Emília Almeida Santos', 1, 3, '1982-07-04', NULL, NULL, NULL, NULL, NULL, 'Porto', '223 568 274', NULL, NULL, NULL, NULL, NULL, 'Solteiro', NULL, 'Funcionária Pública', '12º ano', NULL, NULL),
+(17, NULL, 'Emília Almeida Santos', 1, 3, '1982-07-04', NULL, 'R. de Santa Catarina', '158', '9º Dt.', '4000-442', 'Porto', '223 568 274', NULL, NULL, NULL, NULL, NULL, 'Solteiro', NULL, 'Funcionária Pública', '12º ano', NULL, NULL),
 (18, NULL, 'Jorge Almeida Fontes Oliveira', 0, 1, '2004-08-14', NULL, 'Avenida da República', '488', 'Hab. 32', '4430-910', 'Vila Nova de Gaia', NULL, NULL, NULL, '2005-02-27', '2014-06-22', NULL, 'Solteiro', NULL, 'Estudante', '9º ano', 15, 16),
 (19, NULL, 'Maria Ana Almeida Fontes Oliveira', 1, 1, '2014-02-07', NULL, 'Avenida da República', '488', 'Hab. 32', '4430-910', 'Vila Nova de Gaia', NULL, NULL, NULL, '2014-06-22', NULL, NULL, NULL, NULL, NULL, NULL, 15, 17),
 (20, NULL, 'Pedro João dos Santos', 0, 7, '1980-08-05', NULL, 'Rua das Flores', '382', '1º Esq.', '1500-450', 'Lisboa', '918 638 264', NULL, 'pjoao.santos@gmail.com', NULL, NULL, NULL, 'Solteiro', NULL, 'Cirurgião', 'Doutoramento', NULL, NULL);

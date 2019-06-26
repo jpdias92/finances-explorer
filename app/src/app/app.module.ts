@@ -8,17 +8,25 @@ import { MaterialModule } from './infrastructure/material/material.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
+import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    LayoutModule
   ],
   bootstrap: [AppComponent]
 })

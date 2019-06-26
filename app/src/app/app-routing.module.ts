@@ -6,6 +6,10 @@ import { MembersListComponent } from './modules/members/components/members-list/
 
 const routes: Routes = [
   {
+    path: 'dashboard',
+    loadChildren: './modules/dashboard/dashboard.module#DashboardModule'
+  },
+  {
     path: 'movements',
     loadChildren: './modules/movements/movements.module#MovementsModule'
   },
