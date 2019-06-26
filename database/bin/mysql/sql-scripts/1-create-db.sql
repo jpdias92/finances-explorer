@@ -7,7 +7,7 @@ USE finances_explorer;
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql:3306
--- Generation Time: Jun 25, 2019 at 09:01 PM
+-- Generation Time: Jun 26, 2019 at 06:16 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.19
 
@@ -49,8 +49,8 @@ CREATE TABLE `members` (
   `id` int(11) NOT NULL,
   `title` varchar(15) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
-  `gender` tinyint(1) NULL,
-  `nationality` int(11) NULL,
+  `gender` tinyint(1) DEFAULT NULL,
+  `nationality` int(11) DEFAULT NULL,
   `birth_date` date DEFAULT NULL,
   `death_date` date DEFAULT NULL,
   `street_name` varchar(100) DEFAULT NULL,
@@ -87,12 +87,16 @@ INSERT INTO `members` (`id`, `title`, `name`, `gender`, `nationality`, `birth_da
 (8, NULL, 'Sara Castro Cunha Correia', 1, 1, '2018-12-11', NULL, 'Rua Vasco Gama', '96', '3º Centro', '4430-210', 'Vila Nova de Gaia', NULL, NULL, NULL, '2019-06-09', NULL, NULL, 'Solteiro', NULL, NULL, NULL, 9, 7),
 (9, 'Dr.', 'Alexandre Ribeiro Cunha Correia', 0, 1, '1980-09-13', NULL, 'Rua Vasco da Gama', '96', '3º Centro', '4430-210', 'Vila Nova de Gaia', '+351 912 764 472', '+351 212 716 472', 'alex.ribeiro.correia@gmail.com', '1981-06-07', '1990-09-09', '2000-09-10', 'Casado', 7, 'Cirurgião', 'Doutoramento', NULL, NULL),
 (10, 'Sr.', 'David Rocha Castro', 0, 1, '1940-06-05', '2010-02-06', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1941-08-10', NULL, NULL, 'Casado', 4, 'Sapateiro Reformado', '6º ano', NULL, NULL),
-(11, NULL, 'Melinda de Almeida Santos', 1, 1, '1953-10-18', NULL, 'R. Dr. Francisco Sá Carneiro', '1366', NULL, '4430-999', 'Vila Nova de Gaia', '22 9789768', NULL, NULL, NULL, NULL, NULL, 'Casado', 2, NULL, NULL, NULL, NULL),
+(11, NULL, 'Melinda de Almeida Santos', 1, 1, '1953-10-18', NULL, 'R. Dr. Francisco Sá Carneiro', '1366', NULL, '4430-999', 'Vila Nova de Gaia', '22 9789768', NULL, NULL, NULL, NULL, NULL, 'Casado', 2, 'Reformada', NULL, NULL, NULL),
 (12, NULL, 'Carolina Castro Cunha Correia', 1, 1, '2018-12-11', NULL, 'Rua Vasco Gama', '96', '3º Centro', '4430-210', 'Vila Nova de Gaia', NULL, NULL, NULL, '2019-06-09', NULL, NULL, 'Solteiro', NULL, NULL, NULL, 9, 7),
-(13, NULL, 'Júlio Castro Cunha Correia', 0, 1, '2010-08-02', NULL, 'Rua Vasco Gama', '96', '3º Centro', '4430-210', 'Vila Nova de Gaia', NULL, NULL, 'julio.castro.correia@hotmail.com', '2011-06-05', '2019-06-09', NULL, 'Solteiro', NULL, NULL, '4º ano', 9, 7),
+(13, NULL, 'Júlio Castro Cunha Correia', 0, 1, '2010-08-02', NULL, 'Rua Vasco Gama', '96', '3º Centro', '4430-210', 'Vila Nova de Gaia', NULL, NULL, 'julio.castro.correia@hotmail.com', '2011-06-05', '2019-06-09', NULL, 'Solteiro', NULL, 'Estudante', '4º ano', 9, 7),
 (14, NULL, 'Daniel Santos Rodrigues', 0, 9, '1994-01-22', NULL, 'Avenida da República', '755', 'Hab. 93', '4430-180', 'Vila Nova de Gaia', '+1 332 555 0123', '+351 917 973 784', 'dany.s.rodrigues@gmail.com', '1994-05-08', '2000-02-06', '2008-11-16', 'Solteiro', NULL, 'Barbeiro', 'Curso Profissional', NULL, NULL),
 (15, 'Eng.', 'João Fernando Fontes Oliveira', 0, 1, '1963-01-01', NULL, 'Avenida da República', '488', 'Hab. 32', '4430-910', 'Vila Nova de Gaia', '+351 912 764 765', '22 286 6808', 'joao.ff.oliveira@hotmail.com', '1964-02-23', '1971-12-05', '1978-08-27', 'Casado', 16, 'Engenheiro Eletrotécnico', 'Licenciatura', NULL, NULL),
-(16, 'Enfª.', 'Carolina Almeida Oliveira', 1, 1, '1964-11-08', NULL, 'Avenida da República', '488', 'Hab. 32', '4430-910', 'Vila Nova de Gaia', '967 345 567', '22 286 6808', 'carol.alm.oliveira@gmail.com', '1965-04-04', '1973-01-07', NULL, 'Casado', 15, 'Enfermeira', 'Licenciatura', NULL, NULL);
+(16, 'Enfª.', 'Carolina Almeida Oliveira', 1, 1, '1964-11-08', NULL, 'Avenida da República', '488', 'Hab. 32', '4430-910', 'Vila Nova de Gaia', '967 345 567', '22 286 6808', 'carol.alm.oliveira@gmail.com', '1965-04-04', '1973-01-07', NULL, 'Casado', 15, 'Enfermeira', 'Licenciatura', NULL, NULL),
+(17, NULL, 'Emília Almeida Santos', 1, 3, '1982-07-04', NULL, NULL, NULL, NULL, NULL, 'Porto', '223 568 274', NULL, NULL, NULL, NULL, NULL, 'Solteiro', NULL, 'Funcionária Pública', '12º ano', NULL, NULL),
+(18, NULL, 'Jorge Almeida Fontes Oliveira', 0, 1, '2004-08-14', NULL, 'Avenida da República', '488', 'Hab. 32', '4430-910', 'Vila Nova de Gaia', NULL, NULL, NULL, '2005-02-27', '2014-06-22', NULL, 'Solteiro', NULL, 'Estudante', '9º ano', 15, 16),
+(19, NULL, 'Maria Ana Almeida Fontes Oliveira', 1, 1, '2014-02-07', NULL, 'Avenida da República', '488', 'Hab. 32', '4430-910', 'Vila Nova de Gaia', NULL, NULL, NULL, '2014-06-22', NULL, NULL, NULL, NULL, NULL, NULL, 15, 17),
+(20, NULL, 'Pedro João dos Santos', 0, 7, '1980-08-05', NULL, 'Rua das Flores', '382', '1º Esq.', '1500-450', 'Lisboa', '918 638 264', NULL, 'pjoao.santos@gmail.com', NULL, NULL, NULL, 'Solteiro', NULL, 'Cirurgião', 'Doutoramento', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -114,38 +118,38 @@ CREATE TABLE `movements` (
 --
 
 INSERT INTO `movements` (`id`, `movement_category_id`, `amount`, `movement_date`, `description`, `comment`) VALUES
-(1, 1, '300.00', '2019-03-12', 'Doação para o projeto Pés no Risco', ''),
-(2, 3, '17.50', '2019-05-31', 'Compra de pão e vinho para a comunhão', 'Compras feitas no pingo doce pela Drª. Joana Pina Cabral'),
-(3, 4, '30.52', '2019-06-01', 'Pagamento da água do mês de maio', ''),
-(4, 4, '10000.00', '2018-12-01', 'Pagamento do gás do mês de novembro', ''),
-(5, 21, '120.00', '2019-06-30', 'Dia do Pastor', ''),
-(6, 22, '120.00', '2019-06-30', 'Dia do Pastor', ''),
-(7, 5, '10.00', '2019-06-11', 'Pipocas', 'Festa do final do ano letivo'),
-(8, 5, '90.00', '2019-06-11', 'Cinema', 'Festa de final do ano letivo'),
-(9, 7, '300.00', '2018-12-03', 'Compra de alimentos para os cabazes de Natal', 'Compras feitas no continente pela Drª. Helena Pina Cabral'),
-(10, 8, '50.00', '2019-04-07', 'Ofertório', ''),
-(11, 8, '60.00', '2019-05-12', 'Ofertório', ''),
-(12, 8, '90.00', '2018-04-01', 'Ofertório do domingo de Páscoa', ''),
-(13, 8, '57.80', '2019-06-02', 'Ofertório', ''),
-(14, 8, '45.67', '2019-06-09', 'Ofertório', ''),
-(15, 8, '67.45', '2019-06-16', 'Ofertório', ''),
-(16, 8, '68.90', '2019-06-23', 'Ofertório', ''),
-(17, 8, '64.05', '2019-04-28', 'Ofertório', ''),
-(18, 8, '54.30', '2019-05-19', 'Ofertório', ''),
-(19, 8, '48.50', '2019-04-21', 'Ofertório', ''),
-(20, 8, '52.20', '2019-05-26', 'Ofertório', ''),
-(21, 8, '59.00', '2019-04-14', 'Ofertório', ''),
-(22, 9, '65.00', '2019-04-11', 'Lâmpadas', ''),
-(23, 10, '16.00', '2019-03-28', 'Vendas de \"O Novo Despertar\"', '4 exemplares comprados pelo Bispo D. José Jorge de Pina Cabral'),
-(24, 10, '15.00', '2018-07-11', 'Venda do Jornal \"O Gaiense\"', ''),
-(25, 10, '12.50', '2019-02-12', 'Venda de Bíblia', ''),
-(26, 11, '11.40', '2019-05-03', 'Produtos de Limpeza', ''),
-(27, 12, '8.45', '2019-06-23', 'Ofertório', ''),
-(28, 12, '9.80', '2019-06-16', 'Ofertório', ''),
-(29, 12, '24.10', '2019-05-12', 'Ofertório da festa do Dia das Mães', 'Hoje estavam bastantes crianças na escola dominical e, por isso, as receitas foram mais elevadas do que o habitual'),
-(30, 14, '5.10', '2018-12-28', 'Fotocópias - Plano Pastoral', 'Plano pastoral do trimestre de janeiro/fevereiro/março'),
-(31, 16, '190.00', '2016-07-07', 'Cadeira de Rodas', ''),
-(32, 24, '348.00', '2018-12-01', 'Jantares', '');
+(1, 18, '300.00', '2019-03-12', 'Doação para o projeto Pés no Risco', ''),
+(2, 15, '17.50', '2019-05-31', 'Compra de pão e vinho para a comunhão', 'Compras feitas no pingo doce pela Drª. Joana Pina Cabral'),
+(3, 1, '30.52', '2019-06-01', 'Pagamento da água do mês de maio', ''),
+(4, 1, '26.00', '2018-12-01', 'Pagamento do gás do mês de novembro', ''),
+(5, 30, '120.00', '2019-06-30', 'Dia do Pastor', ''),
+(6, 31, '120.00', '2019-06-30', 'Dia do Pastor', ''),
+(7, 19, '10.00', '2019-06-11', 'Pipocas', 'Festa do final do ano letivo'),
+(8, 19, '90.00', '2019-06-11', 'Cinema', 'Festa de final do ano letivo'),
+(9, 33, '300.00', '2018-12-03', 'Compra de alimentos para os cabazes de Natal', 'Compras feitas no continente pela Drª. Helena Pina Cabral'),
+(10, 12, '50.00', '2019-04-07', 'Ofertório', ''),
+(11, 12, '60.00', '2019-05-12', 'Ofertório', ''),
+(12, 12, '90.00', '2018-04-01', 'Ofertório do domingo de Páscoa', ''),
+(13, 12, '57.80', '2019-06-02', 'Ofertório', ''),
+(14, 12, '45.67', '2019-06-09', 'Ofertório', ''),
+(15, 12, '67.45', '2019-06-16', 'Ofertório', ''),
+(16, 12, '68.90', '2019-06-23', 'Ofertório', ''),
+(17, 12, '64.05', '2019-04-28', 'Ofertório', ''),
+(18, 12, '54.30', '2019-05-19', 'Ofertório', ''),
+(19, 12, '48.50', '2019-04-21', 'Ofertório', ''),
+(20, 12, '52.20', '2019-05-26', 'Ofertório', ''),
+(21, 12, '59.00', '2019-04-14', 'Ofertório', ''),
+(22, 29, '65.00', '2019-04-11', 'Lâmpadas', ''),
+(23, 37, '16.00', '2019-03-28', 'Vendas de \"O Novo Despertar\"', '4 exemplares comprados pelo Bispo D. José Jorge de Pina Cabral'),
+(24, 37, '15.00', '2018-07-11', 'Venda do Jornal \"O Gaiense\"', ''),
+(25, 37, '12.50', '2019-02-12', 'Venda de Bíblia', ''),
+(26, 28, '11.40', '2019-05-03', 'Produtos de Limpeza', ''),
+(27, 20, '8.45', '2019-06-23', 'Ofertório', ''),
+(28, 20, '9.80', '2019-06-16', 'Ofertório', ''),
+(29, 20, '24.10', '2019-05-12', 'Ofertório da festa do Dia das Mães', 'Hoje estavam bastantes crianças na escola dominical e, por isso, as receitas foram mais elevadas do que o habitual'),
+(30, 25, '5.10', '2018-12-28', 'Fotocópias - Plano Pastoral', 'Plano pastoral do trimestre de janeiro/fevereiro/março'),
+(31, 3, '190.00', '2016-07-07', 'Cadeira de Rodas', ''),
+(32, 8, '348.00', '2018-12-01', 'Jantares', '');
 
 -- --------------------------------------------------------
 
@@ -201,7 +205,6 @@ INSERT INTO `movement_categories` (`id`, `name`, `type`) VALUES
 (35, 'Seguros', 1),
 (36, 'Tesouraria Diocesana', 1),
 (37, 'Venda de Publicações', 0);
-
 
 -- --------------------------------------------------------
 
@@ -312,7 +315,7 @@ ALTER TABLE `contributions`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `movements`
