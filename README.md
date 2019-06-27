@@ -10,7 +10,7 @@
 docker-compose up -d
 ```
 
-* UI App running on http://localhost:4201/
+* UI App running on http://localhost:4201/dashboard/
 
 * phpMyAdmin will be accessible on http://localhost:8080/
     * username: root
